@@ -7,6 +7,7 @@ export interface Conversation {
   conversationId: number;
   conversationName: string;
   messages: Message[];
+  lastActivity: number;
 }
 
 export interface Session {

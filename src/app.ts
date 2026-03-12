@@ -3,10 +3,12 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { router } from "./router.js"
 import "dotenv/config";
-import type { Message, Conversation, Session } from "./types/conversation";
+import { setupCleanup } from "./cleanup.js";
 
 export const app = express();
 const PORT = process.env.PORT || 3000;
+
+setupCleanup();
 
 app.use(express.json())
 app.use(cookieParser());

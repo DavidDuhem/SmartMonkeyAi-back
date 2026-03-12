@@ -22,10 +22,10 @@ export const getAllConversations = (req: Request, res: Response) => {
   }
 
   if (!sessions[sessionId]) {
-    sessions[sessionId] = { 1: { conversationId: 1, conversationName: "Default Conversation", messages: [] } };
+    sessions[sessionId] = { 1: { conversationId: 1, conversationName: "Default Conversation", messages: [], lastActivity: Date.now() } };
   } else {
     if (!sessions[sessionId][1]) {
-      sessions[sessionId][1] = { conversationId: 1, conversationName: "Default Conversation", messages: [] };
+      sessions[sessionId][1] = { conversationId: 1, conversationName: "Default Conversation", messages: [], lastActivity: Date.now() };
     }
   }
 
@@ -50,6 +50,7 @@ export const createConversation = (req: Request, res: Response) => {
         conversationId,
         conversationName,
         messages: [],
+        lastActivity: Date.now()
     };
 
     res.json({ conversationId, conversationName });

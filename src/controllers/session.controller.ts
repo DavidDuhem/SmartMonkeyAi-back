@@ -21,6 +21,7 @@ export const createSessionId = async (req: Request, res: Response) => {
                 conversationId: 1,
                 conversationName: "Default Conversation",
                 messages: [],
+                lastActivity: Date.now(),
                 },
             };
         }
