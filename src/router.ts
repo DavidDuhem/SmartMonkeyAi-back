@@ -1,8 +1,8 @@
 import { Router } from "express"
 import rateLimit from "express-rate-limit";
-import { askPrompt } from "./controllers/prompt.controller";
-import { createSessionId } from "./controllers/session.controller";
-import { getConversation, getAllConversations, createConversation, deleteConversation } from "./controllers/conversation.controller";
+import { askPrompt } from "./controllers/prompt.controller.js";
+import { createSessionId } from "./controllers/session.controller.js";
+import { getConversation, getAllConversations, createConversation, deleteConversation } from "./controllers/conversation.controller.js";
 
 export const router = Router()
 

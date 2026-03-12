@@ -1,5 +1,5 @@
 import cron from "node-cron";
-import { sessions } from "./store/sessions";
+import { sessions } from "./store/sessions.js";
 
 export function setupCleanup() {
   cron.schedule("*/10 * * * *", () => {

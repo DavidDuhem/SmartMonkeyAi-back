@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
-import { generateSessionId } from "../utils/generateSessionId";
-import { sessions } from "../store/sessions";
+import { generateSessionId } from "../utils/generateSessionId.js";
+import { sessions } from "../store/sessions.js";
 
 export const getConversation = (req: Request, res: Response) => {
   const sessionId = req.cookies.sessionId;
